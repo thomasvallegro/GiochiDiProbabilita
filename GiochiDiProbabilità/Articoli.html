@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Menù</title>
+    <link rel="stylesheet" href="layout.css"> 
+    <link rel="stylesheet" href="articoli-styles.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="nav">
+
+    <a href="" class="active">GLI ARTICOLI</a>
+    <a href="Chi Sono.html" >CHI SONO</a>
+    <a href="Codice.html">CODICE</a>
+</div>
+    <h1 class="Logo" onclick="window.location.href='Index.html'">⚜️</h1>
+   <h1 class="title">Giochi di</h1>
+   <h1 class="title2">Probabilità</h1>
+
+<div class="separatore"></div>
+
+<p class="Testo">In questa sezione potrai consultare gli <strong>articoli</strong> dedicati ai vari <strong>concetti della probabilità</strong>, ognuno suddiviso per argomento.</p>
+
+ <div class="card-container">
+    <div class="card" onclick="window.location.href='Articoli/Articolo_Milione.html'">
+        <h3>🎰</h3>
+        <h4>Giochi d'azzardo</h4>
+        <p>Quanta probabilità c'è di vincere un milione di euro?</p>
+        <!-- <a href="">Scopri di più</a> -->
+    </div>
+
+    <div class="card" onclick="window.location.href='Articoli/Articolo_Successo.html'">
+        <h3>🏆</h3>
+        <h4>Successo</h4>
+        <p>Quante possibilità ci sono di raggiungere il successo?</p>
+        <!-- <a href="">Scopri di più</a> -->
+    </div>
+
+    <div class="card" onclick="window.location.href='Articoli/Articolo_ImportanzaTempo.html'">
+        <h3>⏳</h3>
+        <h4>Tempo</h4>
+        <p>L'importanza del tempo è determinata dalla probabilità?</p>
+        <!-- <a href="">Scopri di più</a> -->
+    </div>
+
+    <div class="card" onclick="window.location.href='Articoli/Articolo_Divertimento.html'">
+        <h3>🎮</h3>
+        <h4>Svago</h4>
+        <p>Il divertimento abbassa le possibilità di arrivare a un obiettivo?</p>
+        <!-- <a href="">Scopri di più</a> -->
+    </div>
+
+   <div class="card" style="cursor: pointer;">
+    <h3>🍀</h3>
+    <h4>Fortuna</h4>
+    <p>Quanto gioca la fortuna nella probabilità?</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>🫀</h3>
+    <h4>Personalità</h4>
+    <p>Come la personalità influisce sulle decisioni basate sulla probabilità?</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>🛡️</h3>
+    <h4>Protezione</h4>
+    <p>Serve protezione per non distruggere nessuna possibilità</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>💎</h3>
+    <h4>Valore</h4>
+    <p>Il vero valore della probabilità</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>💸</h3>
+    <h4>Prezzo</h4>
+    <p>Il vero prezzo della probabilità</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>🚧</h3>
+    <h4>Lavori in corso</h4>
+    <p>La probabilità va costruita passo dopo passo</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>🏰</h3>
+    <h4>Castello di carte</h4>
+    <p>Per un battito di ciglia, cade tutto un castello di carte</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>👁️</h3>
+    <h4>Focus</h4>
+    <p>L'importanza di mantenere il focus su tutte le possibilità</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>💪🏻</h3>
+    <h4>Impegno</h4>
+    <p>Impegno, determinazione e costanza. Le tre parole chiave delle probabilità</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>🍽️</h3>
+    <h4>Nutrizione</h4>
+    <p>Nutrire il corpo e la mente per massimizzare le possibilità</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>🩺</h3>
+    <h4>Professionalità</h4>
+    <p>Osservare con occhio clinico per valutare gli imprevisti</p>
+</div>
+
+<div class="card" style="cursor: pointer;">
+    <h3>📞</h3>
+    <h4>Comunicazione</h4>
+    <p>La comunicazione efficace può influenzare le probabilità di successo</p>
+</div>
+
+<!-- Struttura del Popup unico per tutte le card -->
+<div id="mioPopup" class="popup">
+  <div class="popup-contenuto">
+    <span class="chiudi">&times;</span>
+    <p class="avviso">⚠️ Articolo non disponibile</p>
+  </div>
+</div>
+</div>
+
+</body>
+
+<script>// Seleziona tutte le card e gli elementi del popup
+const cards = document.querySelectorAll(".card");
+const popup = document.getElementById("mioPopup");
+const chiudiBtn = document.querySelector(".chiudi");
+
+// Cicla su ogni card per aggiungere l'evento click
+cards.forEach(function(card) {
+  card.addEventListener("click", function() {
+    popup.style.display = "block";
+  });
+});
+
+// Chiudi il popup premendo sulla "x"
+chiudiBtn.addEventListener("click", function(event) {
+  event.stopPropagation();
+  popup.style.display = "none";
+});
+
+// Chiudi il popup cliccando fuori dal box bianco
+window.addEventListener("click", function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+});
+</script>
+</html>

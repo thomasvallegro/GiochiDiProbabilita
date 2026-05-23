@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="layout_Start.css">
+    <link rel="stylesheet" href="Moneta.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="nav">
+    <a href="Articoli.html">GLI ARTICOLI</a>
+    <a href="Chi Sono.html">CHI SONO</a>
+    <a href="Codice.html">CODICE</a>
+</div>
+
+<h1 class="Logo" onclick="window.location.href='Index.html'">⚜️</h1>
+<h1 class="title">Giochi di</h1>
+<h1 class="title2">Probabilità</h1>
+<!-- Da riga 26 a riga 31 parte del codice html per il lancio della moneta -->
+<div id="coin" class="coin">
+    <div class="head">🪙</div>
+    <div class="tail">🪙</div>
+</div>
+<button id="lancia">Lancia la moneta</button>
+<div class="result" id="result"></div>
+<div style="margin-bottom: 10%;"></div> spazio tra un elemento e l'altro | NOTA BENE: è stato inserito l'attributo 'style' direttamente nel div e non nell'html per non aggiungere una classe inutile o modificare tutti i div.
+<div class="separatore"></div>
+<div style="margin-bottom: 10%;"></div>
+<h3 class="Titolo">Un concetto che non si ferma al gioco</h3>
+<p class="Testo">La probabilità è un concetto <strong> più ampio di quanto si possa immaginare</strong>. Ogni aspetto della nostra vita quotidiana è <strong> influenzato dall'incertezza</strong>, le nostre decisioni sono guidate da <strong>stime consce o inconsce</strong>, che dobbiamo imparare a bilanciare con il merito, l'abilità e la competenza. <br>
+Questo affascinante fenomeno viene studiato attraverso <strong>modelli statistici</strong> che permettono di trarre <strong>conclusioni accurate</strong>, analizzando le variabili che <strong>aumentano o diminuiscono</strong> le possibilità di un evento.</p>
+
+<blockquote>⚠️ATTENZIONE: Le informazioni fornite sono riportate da fonti verificate ma c'è comunque un'alta probabilità che ciò che ti spiego non 
+si verifichi nella tua situazione in particolare. Ciò non significa che io mi sia sbagliato, perchè la mia tesi non tiene conto di ogni
+caso specifico a fini di una comprensione generale. </blockquote>
+
+<h3 class="Titolo">I Temi</h3>
+<div class="separatore"></div>
+
+<div class="card-container">
+    <div class="card">
+        <h3>🎰</h3>
+        <h4>Giochi d'azzardo</h4>
+        <p>Quanta probabilità c'è di vincere un milione di euro?</p>
+        <a href="">Scopri di più</a>
+    </div>
+
+    <div class="card">
+        <h3>🏆</h3>
+        <h4>Successo</h4>
+        <p>Quante possibilità ci sono di raggiungere il successo?</p>
+        <a href="">Scopri di più</a>
+    </div>
+
+    <div class="card">
+        <h3>⏳</h3>
+        <h4>Tempo</h4>
+        <p>L'importanza del tempo è determinata dalla probabilità?</p>
+        <a href="">Scopri di più</a>
+    </div>
+
+    <div class="card">
+        <h3>🎮</h3>
+        <h4>Svago</h4>
+        <p>Il divertimento abbassa le possibilità di arrivare a un obiettivo?</p>
+        <a href="">Scopri di più</a>
+    </div>
+</div>
+
+<div class="separatore"></div>
+
+
+<h3 class="Titolo">FAQ</h3>
+<details>
+  <summary>Cos'è la probabilità?</summary>
+  <p>La probabilità è una misura della possibilità che un evento si verifichi, espressa come un numero tra 0 e 1. Ciò si applica a tutto ciò che è soggetto a incertezza, ed essendo tutto soggetto a incertezza, la probabilità ci aiuta a comprendere e prevedere i risultati di ogni situazione.</p>
+</details>
+<details>
+  <summary>Come si applica la probabilità?</summary>
+  <p>La probabilità è in stretto contatto con il numero di eventi favorevoli rispetto a quelli sfavorevoli, e viene utilizzata per calcolare le possibilità di un determinato risultato in situazioni caratterizzate dall'incertezza.</p>
+</details>
+
+<details>
+  <summary>Il passato infulenza le scelte future?</summary>
+  <p>No, la probabilità che si verifichi un evento è indipendente agli eventi accaduti nel passato. Per esempio, se hai provato a lanciare la moneta all'inizio della pagina più di una volta, i risultati non saranno influenzati dai lanci che avevi già effettuato. Adesso riprova a lanciare la moneta e capisci anche tu questa cosa!</p>
+</details>
+
+<details>
+  <summary>La probabilità è sempre matematicamente prevedibile? </summary>
+  <p>No, e adesso scoprirai il vero motivo. Nei giochi di ruolo, giochi di azzardo ed in generale nei sistemi chiusi, la probabilità della vincitaa è calcolata preventivamente ma le scelte delle persone sono influenzate da emozioni, irrazionalità e psicologia, elementi impossibili da inserire in un'equazione matematica esatta.</p>
+</details>
+
+<div class="separatore"></div>
+</body>
+
+<!-- Script per la logica del lancio della moneta (Righe )-->
+<script>
+    const coinElement = document.getElementById('coin'); //variabile
+    const lanciaButton = document.getElementById('lancia'); //variabile
+    const resultDiv = document.getElementById('result'); //variabile
+    
+    lanciaButton.addEventListener('click', () => {
+        // Disabilita il bottone durante l'animazione
+        lanciaButton.disabled = true;
+        
+        // Rimuovi le classi precedenti
+        coinElement.classList.remove('flip-head', 'flip-tail');
+        resultDiv.textContent = '';
+        
+        // Genera un numero casuale (0 = Testa, 1 = Croce)
+        const result = Math.random() < 0.5 ? 'head' : 'tail';
+        
+        // Aggiungi la classe di animazione
+        if (result === 'head') {
+            coinElement.classList.add('flip-head');
+            setTimeout(() => {
+                resultDiv.textContent = '👤 TESTA!'; //stampa il testo 
+                lanciaButton.disabled = false;
+            }, 800);
+        } else {
+            coinElement.classList.add('flip-tail');
+            setTimeout(() => {
+                resultDiv.textContent = '❌ CROCE!'; //stampa il testo
+                lanciaButton.disabled = false;
+            }, 800);
+        }
+    });
+</script>
+</html>

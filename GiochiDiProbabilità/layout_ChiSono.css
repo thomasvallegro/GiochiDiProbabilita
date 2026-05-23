@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container img {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px 10px rgba(230, 43, 255, 0.5));
+    margin-bottom: 20px;
+    transition: ease-in-out 0.3s;
+}
+
+.container img:hover {
+   transform: scale(1.1) rotate(2deg); /* Ingrandisce e ruota */
+   filter: brightness(1.2); 
+   transition: ease-in-out 0.3s;
+   filter: drop-shadow(5px 5px 10px rgb(43, 43, 255))
+}

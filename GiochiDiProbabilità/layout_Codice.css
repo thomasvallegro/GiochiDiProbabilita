@@ -1,0 +1,50 @@
+.link{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px;
+}
+.GitHub{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin-top: auto;
+    padding: 40px 50px;
+    font-size: 46px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid rgb(31, 11, 157);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(31, 11, 157);
+}
+
+.GitHub:hover {
+    background-color: rgb(31, 11, 157);
+    color: black;
+    box-shadow: 0 0 20px rgb(31, 11, 157);
+}
+.Canva{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin-top: auto;
+    padding: 40px 50px;
+    font-size: 46px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid rgb(178, 0, 178);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(178, 0, 178);
+}
+
+
+.Canva:hover {
+    background-color: rgb(178, 0, 178);
+    color: black;
+    box-shadow: 0 0 20px rgb(178, 0, 178);
+}
